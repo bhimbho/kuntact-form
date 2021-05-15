@@ -3,9 +3,9 @@
 namespace Tests\Unit;
 
 use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Tests\TestCase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
+use Tests\TestCase;
 
 class FormTest extends TestCase
 {
@@ -21,7 +21,7 @@ class FormTest extends TestCase
         $response = $this->post('/contact-form', [
             'message' => 'Hello',
             'fullname' => 'Soneye Oluwasina Abimbola',
-            'email' => 'advancoplanet@gmail.com'
+            'email' => 'advancoplanet@gmail.com',
         ]);
         $response->assertSessionHasNoErrors(['message']);
     }
@@ -34,7 +34,7 @@ class FormTest extends TestCase
             'message' => 'Hello',
             'fullname' => 'Soneye Oluwasina Abimbola',
             'email' => 'advancoplanet@gmail.com',
-            'upload_file' => $file 
+            'upload_file' => $file,
         ]);
         $response->assertSessionHasNoErrors(['upload_file']);
     }

@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -25,8 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $query =Contact::with('user')
-        ->orderBy('id', 'DESC')->get();
+        $query = Contact::with('user')
+            ->orderBy('id', 'DESC')->get();
         return view('home')->with('contacts', $query);
     }
 }

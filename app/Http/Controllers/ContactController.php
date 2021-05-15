@@ -43,11 +43,10 @@ class ContactController extends Controller
             $diff = $query->created_at->diffInMinutes(Carbon::now()); //get last contact message created by user and get diff with current time
             $wait_time = 5 - $diff; //waiting time
 
-            if ($diff >= 5 || $wait_time == 0) {
+            if ($diff >= 5 || $wait_time == 0) { //check waiting time and time difference
                 $this->store_contact($request);
             } else {
                 return back()->with('error', 'Kindly wait ' . $wait_time . ' minutes before the next submission');
-                return response();
             }
 
         } else {
@@ -58,14 +57,15 @@ class ContactController extends Controller
     }
 
     /**
-     * Store a newly created message in storage.
+     * Store a newly created message in DB.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store_contact($request)
     {
-        $file_link = ($request->upload_file) ? $request->upload_file->store('public/uploaded_files') : '';
+        $file_link = ($request->upload_file) ? $request->upload_file->store('public/uploaded_files') : ''; //store uploaded file and get link path
+
         Contact::create([
             'name' => $request->fullname,
             'file_name' => $file_link,

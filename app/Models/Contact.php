@@ -11,11 +11,6 @@ class Contact extends Model
 
     protected $fillable = ['name', 'file_name', 'email', 'message', 'user_id'];
 
-    // public function check_last_message($user_id)
-    // {
-    //     return $this->created_at;
-    // }
-
     /**
      * Get the user that owns the Contact
      *

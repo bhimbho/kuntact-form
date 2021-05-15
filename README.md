@@ -12,6 +12,7 @@
 - Clone project
 - Setup Laravel UI & Auth
 - Run Migration
+- Running Application
   
 Setting Up Laravel UI and Auth
 1.	run php artisan ui vue --auth
@@ -19,12 +20,15 @@ Setting Up Laravel UI and Auth
 3. run npm run dev
 
 Run Migration
-1. Setup Mysql database
-2. In you .env file set DB_DATABASE=contact_form
-3. Run "php artisan migrate"
+4. Setup Mysql database
+5. In you .env file set DB_DATABASE=contact_form
+6. Run "php artisan migrate"
  
-  
-
+ Running Application
+1. Run "php artisan serve" 
+2. Register as a new platform user or login as existing user
+3. Login redirects you to dashboard
+4. Click Send Message and Proceed to Message send
 ## Unit Test
 - Navigate to test folder (test_check_email_name_msg_field_are_filled(), test_uploaded_file())
 - To Test Run "php artisan test"

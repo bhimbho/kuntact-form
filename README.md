@@ -10,7 +10,6 @@
 
 ## Installing Kuntact Form
 - Clone project
-- Setup Laravel UI & Auth
 - Run Migration
 - Running Application
   

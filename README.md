@@ -13,8 +13,8 @@
 - Run Migration
 - Running Application
   
-Setting Up Laravel UI and Auth
-1.	run php artisan ui vue --auth
+Setting Up Laravel 
+1. CLone Project
 2.	run npm install
 3. run npm run dev
 
